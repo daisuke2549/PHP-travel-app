@@ -1,4 +1,5 @@
 <?php require_once 'products.php' ?>
+<?php require_once 'functions.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css" >
-  <title>PHP ECsite</title>
+  <title>PHP ECサイト</title>
 </head>
 <body>
   <div class="container">
@@ -25,7 +26,7 @@
         </div>
         <?php endforeach; ?>
       </form>
-      <div class="btn-footer bg-white">
+      <div class="btn-footer ">
         <input class="cart-btn" type="submit" name="submit" value="カートに追加" />
       </div>
     </div>
