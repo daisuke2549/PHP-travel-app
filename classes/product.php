@@ -26,7 +26,19 @@
     }
 
     public function getImage(){
-      return $this->image;
+       return $this->image;
     }
+
+    private function calPriceIncludedTax(){
+       $tacRate = 0.1;
+       return $this->price + $this->price * $taxRate;
+    }
+
+
+    public function displayPrice(){ 
+       $price = $this->calPriceIncludedTax();
+       return $price."円";
+    }
+
    }
 ?>

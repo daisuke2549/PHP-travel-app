@@ -1,11 +1,4 @@
-<?php require_once 'products.php' ;?>
-<?php require_once 'functions.php' ;?>
-<?php
-   require_once 'classes/product.php';
-   $banana = new Product('banana');
-
-?>
-
+<?php require_once 'products.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,31 +6,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css" >
-  <title>PHP ECサイト</title>
+  <title>PHP ECsite</title>
 </head>
 <body>
   <div class="container">
     <div class="app-container">
-      <h1 class="title">Online shopping <?php echo $banana->getName(); ?> </h1>
-      <form id="cart" method="post" action="cart.php">
-         <div class="cards-container">
-         </div>
-      
-      <div class="cards-container">
+      <h1 class="title">Shopping</h1>
+      <form method="post" action="cart.php">
+        <div class="cards-container">
         <?php foreach($products as $product): ?>
-      <div class="card">
-        <img class="card-image" src="<?php echo $product["image"]?>" alt="">
-        <p class="card-title"><?php echo $product["name"]?></h1></p>
-        <div class="flex justify-between">
-          <p class="card-price"><?php echo displayPrice($product["price"]); ?></p>
-          <input name=<?php echo $product["id"]; ?> min="0" class="item-number" type="number" value="0">
+        <div class="card">
+          <img class="card-image" src="<?php echo $product->getImage(); ?>" alt="">
+          <p class="card-title"><?php echo $product->getName(); ?></p>
+          <div class="flex justify-between">
+            <p class="card-price"><?php echo $product->displayPrice(); ?></p>
+            <input min="0" class="item-number" type="number" name="<?php echo $product->getId(); ?>" value="0">
+          </div>
         </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </form>
+        <?php endforeach; ?>
+      </form>
       <div class="btn-footer bg-white">
-      <input form="cart" class="cart-btn" type="submit" name="submit" value="カートに追加" />
+        <input class="cart-btn" type="submit" name="submit" value="カートに追加" />
       </div>
     </div>
   </div>
