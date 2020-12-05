@@ -1,0 +1,43 @@
+Server version: 8.0.22 Homebrew
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database travel-app;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-app' at line 1
+mysql> create database travel_app;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> grant all on travel_app * to sasaki@localhost identified by '25492549ds'
+    ->
+    ->
+
+
+
+create table travels (
+   id int not null auto_increment primary key.
+   state tinyint(1) default 0, /* 0:not finished, 1:finished */
+  title text
+);
+
+
+grant all on travel_apps.* to sasaki@localhost identified by '25492549ds';
+
+
+
+alter user sasaki@localhost identified by '25492549ds';
+
+
+
+CREATE TABLE travel_apps.travel_apps(id int, name varchar(10));
+
+
+insert into travel_apps values
+(0, 'yonezawa'),
+(0, 'tsuruoka'),
+(1, 'syonai');
